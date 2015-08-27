@@ -6,18 +6,18 @@ using namespace std;
 int main()
 {
 	// 1. make NAME a constant
-	string NAME = "Fred Flintstone"; 
+	const string NAME = "Fred Flintstone"; 
 
 
 	// 2. Give in an appropriate data type for each of the 
     //    following variables (replace underscores).
-	___ age = 38;
+	int age = 38;
 
-	___ gpa = 1.5;
+	float gpa = 1.5;
 
-	___ grade = 'D';
+	char grade = 'D';
 
-	___ enrolled = true;
+	bool enrolled = true;
 
 	
 	cout << NAME << " is " << age << " years old. He has a " 
@@ -28,7 +28,7 @@ int main()
 	string hello = "Hello";
 	string world = "World";
 	
-	
+	cout << hello << " " << world;
 	
 	
 
