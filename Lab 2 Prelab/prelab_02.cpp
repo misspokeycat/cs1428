@@ -16,16 +16,14 @@ int main()
     int x;
 	int y;
 
-	x * x = x;
-
-	y += 10;
-
 	cout << "Enter the value for X" << endl;
-	cin << x;
+	cin >> x;
 
 	cout << "Enter the value for Y" << endl;
-	cin << y;
+	cin >> y;
 
+	x = x * x;
+	y += 10;
 
 	cout << "X squared = " << x << endl
 	     << "Y + 10  = " << y << endl;
@@ -41,7 +39,10 @@ int main()
 	cout << "Do you even lift bro?" << endl;
 
 	// write your code here
-
+	int sickGains;
+	cin >> sickGains;
+	float sickGainsKg = sickGains / 2.20462;
+	cout << sickGainsKg;
 
 
 
