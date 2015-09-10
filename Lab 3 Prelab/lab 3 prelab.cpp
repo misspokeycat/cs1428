@@ -35,7 +35,9 @@ int main()
 
 
 	// ADD HERE write your code here
-
+	fin >> firstName >> lastName >> year;
+	year += 30;
+	fout << firstName << " " << lastName << " " << year;
 
 	
 
