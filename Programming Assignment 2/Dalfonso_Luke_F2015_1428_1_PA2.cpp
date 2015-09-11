@@ -48,7 +48,7 @@ int main(){
 
 
 
-    cout << "\n\n\n" << "Prepared by: D'Alfonso, Luke - Accountant" << endl;
+    cout << "\n\n\n\n" << "Prepared by: D'Alfonso, Luke - Accountant" << endl;
     cout << "S.P. Financial Services .";
     return 0;
 }
