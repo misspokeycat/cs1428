@@ -42,7 +42,7 @@ int main(){
 
     cout << "\n\n\n";
     cout << "The Assessed Value of the Property :     $" << assessed << endl;
-    cout << "The Property Tax Rate for each $100.00 : $" << taxRate << endl;
+    cout << "The Property Tax Rate for each $100.00 : " << taxRate << " % per $100.00" << endl;
     cout << "Taxable Amount :                         $" << taxableAmount << endl;
     cout << "Property Tax :                           $" << propertyTax << endl;
 
