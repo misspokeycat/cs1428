@@ -38,7 +38,7 @@ int main(){
     propertyTax = taxableAmount * (taxRate/100);
 
     //This formats the decimal output to display 2 digits after the decimal point.
-    std::cout << std::setprecision(2) << std::fixed;
+    cout << setprecision(2) << fixed;
 
     cout << "\n\n\n";
     cout << "The Assessed Value of the Property :     $" << assessed << endl;
