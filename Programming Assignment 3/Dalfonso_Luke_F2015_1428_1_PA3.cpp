@@ -1,9 +1,9 @@
-/*  Dalfonso_Luke_F4015_1428_1_PA3.cpp
+/*  Dalfonso_Luke_F2015_1428_1_PA3.cpp
  *
  *  Author: Luke D'Alfonso
- *  Due Date: 9/23/4015
+ *  Due Date: 9/23/2015
  *  Programming Assignment Number 3
- *  Fall 4015 - CS 1428 - Section Number 1
+ *  Fall 2015 - CS 1428 - Section Number 1
  *
  *  Instructor: Husain Gholoom.
  *
