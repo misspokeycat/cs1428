@@ -48,7 +48,7 @@ int main(){
 
     //Output operations
     fout << setprecision(2) << fixed;
-    fout << "\t\t\tBuying - selling stocks Report" << endl;
+    fout << "\t\tBuying - selling stocks Report" << endl << endl;
     fout << setw(40) << left << "Client Name:" << firstName << " " << lastName << endl;
     fout << setw(40) << left << "Number of shares sold:" << sharesSold << endl;
     fout << setw(40) << left << "Purchase price of each share:" << '$' << purchasePrice << endl;
