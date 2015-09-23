@@ -7,7 +7,7 @@
  *
  *  Instructor: Husain Gholoom.
  *
- *  *Caulculates property tax given assessed value and property tax rate*
+ *  *Calculates property tax given assessed value and property tax rate*
  */
 #include <iostream>
 #include <iomanip> //for decimal formatting
