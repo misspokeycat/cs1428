@@ -2,12 +2,12 @@
  *
  *  Author: Luke D'Alfonso
  *  Due Date: 10/7/2015
- *  Programming Assignment Number 3
+ *  Programming Assignment Number 4
  *  Fall 2015 - CS 1428 - Section Number 1
  *
  *  Instructor: Husain Gholoom.
  *
- *  *Calculates profit/loss on stock sales, and outupts results to file*
+ *  *Calculates parking fee given time parked and type of vehicle*
  */
 #include <iostream>
 #include <iomanip>
