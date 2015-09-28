@@ -16,12 +16,12 @@ using namespace std;
 int main(){
 
 	//Declarations
-	const float init_Car_Rate = 1.00;
-	const float init_Bus_Rate = 3.00;
-	const float init_Truck_Rate = 2.00;
-	const float final_Car_Rate = 1.75;
-	const float final_Bus_Rate = 3.25;
-	const float final_Truck_Rate = 2.75;
+	const float INIT_CAR_RATE = 1.00;
+	const float INIT_BUS_RATE = 3.00;
+	const float INIT_TRUCK_RATE = 2.00;
+	const float FINAL_CAR_RATE = 1.75;
+	const float FINAL_BUS_RATE = 3.25;
+	const float FINAL_TRUCK_RATE = 2.75;
 
 	char vehicleType;
 	int hoursParked;
@@ -51,18 +51,18 @@ int main(){
 	switch(vehicleType){
 		case 'C':
 		case 'c':
-			selectedInitRate = init_Car_Rate;
-			selectedFinalRate = final_Car_Rate;
+			selectedInitRate = INIT_CAR_RATE;
+			selectedFinalRate = FINAL_CAR_RATE;
 			break;
 		case 'B':
 		case 'b':
-			selectedInitRate = init_Bus_Rate;
-			selectedFinalRate = final_Bus_Rate;
+			selectedInitRate = INIT_BUS_RATE;
+			selectedFinalRate = FINAL_BUS_RATE;
 			break;
 		case 'T':
 		case 't':
-			selectedInitRate = init_Truck_Rate;
-			selectedFinalRate = final_Truck_Rate;
+			selectedInitRate = INIT_TRUCK_RATE;
+			selectedFinalRate = FINAL_TRUCK_RATE;
 			break;
 		default:
 			break;
