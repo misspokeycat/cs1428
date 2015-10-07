@@ -26,7 +26,7 @@ int main(){
         cout << "Orbs of pure energy arch from your fingertips dealing " << (30 + INTELLIGENCE) << " magic damage!" << endl;
         break;
     default:
-        cout << "ERROR: Invalid Input"; << endl;
+        cout << "ERROR: Invalid Input" << endl;
     }
     return 0;
 }
