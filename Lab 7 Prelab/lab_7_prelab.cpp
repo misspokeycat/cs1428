@@ -19,7 +19,8 @@ int main()
     srand(time(NULL));     // seeds random number generator
 
     // ADD HERE - start loop here
-
+    bool done = false;
+    do {
     // game menu
     cout << "Welcome to my rock, paper, scissors game." << endl;
     cout << "please type \"rock\", \"paper\", or \"scissors\""
@@ -70,8 +71,23 @@ int main()
     }
 
     // ADD HERE - prompt user if they want to play the game again
+    bool valid = false;
+    do {
+        cout << "Play again? (Y/N): ";
+        char restart = 'x';
+        cin >> restart;
+        if (restart == 'Y' || restart == 'y'){
+            valid = true;
+            done = false;
+        } else if (restart == 'N' || restart == 'n'){
+            valid = true;
+            done = true;
+        } else {
+            cout << "Invalid entry." << endl;
+        }
+    } while (!valid);
 
     // ADD HERE - End loop here
-
+    } while (!done);
     return 0;
 }
