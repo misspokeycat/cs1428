@@ -14,7 +14,7 @@ int main()
 	const int SIZE = 5;  // size of array
 
 	// ADD HERE - create an array of integers that will hold 5 integers.
-
+	int arr [SIZE];
 
 	cout << "please enter 5 integers : " << endl;
 
@@ -22,12 +22,15 @@ int main()
 	for (int i = 0 ; i < SIZE ; i++)
 	{
 		// ADD HERE - take user's input and store it in the array you created
-	
-    	
+		cin >> arr[i];
+
 	}
 
 	// ADD HERE - Write a for loop to print the array to the screen
-
+	for (int i = 0 ; i < SIZE ; i++)
+	{
+		cout << arr[i] << " ";
+	}
 
 	return 0;
 }
