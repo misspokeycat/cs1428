@@ -30,11 +30,11 @@ int main(){
             cout << "The square pair numbers are :-" << endl;
             cout << "N\tP\tN+P\tP-N" << endl;
             cout << "---------------------------" << endl;
-            for (int x = 1; x <= limit; x++){
-                for (int y = 0; y <= limit; y++){
+            for (int n = 1; n <= limit; n++){
+                for (int p = 0; p <= limit; p++){
                     //If ceil(x) == x, then x is an int.
-                    if (ceilf(sqrtf(x+y)) == sqrtf(x+y) && ceilf(sqrtf(y-x)) == sqrtf(y-x)){
-                        cout << x << "\t" << y << "\t" << x+y << "\t" << y-x << endl;
+                    if (ceilf(sqrtf(n+p)) == sqrtf(n+p) && ceilf(sqrtf(p-n)) == sqrtf(p-n)){
+                        cout << n << "\t" << p << "\t" << n+p << "\t" << p-n << endl;
                     }
                 }
             }
@@ -57,6 +57,7 @@ int main(){
             }
         }
     }
+    cout << endl;
     cout << "Square numbers is prepared by Luke D'Alfonso" << endl;
     cout << "Game Playing with Computers , INC." << endl;
     cout << "10 - 21 - 2015";
