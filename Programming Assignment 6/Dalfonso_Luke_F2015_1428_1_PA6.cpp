@@ -28,10 +28,8 @@ int main(){
         cout << "Enter any " << arrsize << " Characters, Digits, Special Symbols :  ";
         char arr[arrsize];  //Will be our main array
         char arrReverseCase[arrsize]; //We'll use this to store the "reverse case" array.
-        char arrReversed[arrsize]; //Will store the reversed array.
         for (int x = 0; x < arrsize; x++){
             arrReverseCase[x] = '!'; //Filling array with '!' to eliminate randomness.
-            arrReversed[x] = '!';
         }
         cin >> arr;
 
@@ -45,7 +43,7 @@ int main(){
         for (int x = 0; x < arrsize; x++){
             //Easiest way to check ranges of letters.  Can also use ASCII values.
             if (arr[x] >= 'A' && arr[x] <= 'Z'){
-                cout << arr[x] << "  is a Capital Letter" << endl << endl;
+                cout << arr[x] << "  is a Capital Letter" << endl;
                 //To save time, we will start building the reverse case array here.
                 //ASCII 'A' = 65, and ASCII 'a' = 97, so add 32 for capital to lowercase.
                 arrReverseCase[x] = arr[x] + 32;
@@ -58,7 +56,7 @@ int main(){
         for (int x = 0; x < arrsize; x++){
             //Same as before, just different ranges.
             if (arr[x] >= 'a' && arr[x] <= 'z'){
-                cout << arr[x] << "  is a Small Letter" << endl << endl;
+                cout << arr[x] << "  is a Small Letter" << endl;
                 //Just subtract 32 to do lowercase to capital.
                 arrReverseCase[x] = arr[x] - 32;
                 lowcount++;
@@ -71,7 +69,7 @@ int main(){
         for (int x = 0; x < arrsize; x++){
             //Same as before, just different ranges.
             if (arr[x] >= '0' && arr[x] <= '9'){
-                cout << arr[x] << "  is a Digit" << endl << endl;
+                cout << arr[x] << "  is a Digit" << endl;
                 //We will copy the digit exactly here.
                 arrReverseCase[x] = arr[x];
                 digitcount++;
@@ -86,7 +84,7 @@ int main(){
             //You can still do range checks, but this is a neat trick:
             //If we never stored it in our reverse array, it must be a special symbol.
             if (arrReverseCase[x] == '!'){
-                cout << arr[x] << " is a Special Symbol" << endl << endl;
+                cout << arr[x] << " is a Special Symbol" << endl;
                 arrReverseCase[x] = arr[x];
                 sscount++;
             }
@@ -97,11 +95,10 @@ int main(){
         //Displays the array in reverse.
         cout << "The Array in Reverse Order    ";
         for (int x = 0 ; x < (arrsize / 2) + 1; x++){
-            arrReversed[x] = arr[arrsize-(x+1)];
-            arrReversed[arrsize-(x+1)] = arr[x];
+            swap(arr[x], arr[arrsize-(x+1)]);
             swap(arrReverseCase[x], arrReverseCase[arrsize-(x+1)]); //We'll flip the reverse case array as well.
         }
-        cout << arrReversed << endl;
+        cout << arr << endl;
         cout << endl;
 
         //Displays the array case flipped.
@@ -110,14 +107,14 @@ int main(){
         cout << endl;
 
         //Displays the array, rotated 2 to the left.
-        cout << "Rotating the array 2 positions :    ";
+        cout << "The Array After Rotating 2 position to the left  ";
         for (int x = 0; x < 2; x++){
             //This code moves the first element in the array to the back.
             for (int i = 1; i < arrsize; i++){
-                swap(arr[i-1], arr[i]);
+                swap(arrReverseCase[i-1], arrReverseCase[i]);
             }
         }
-        cout << arr << endl;
+        cout << arrReverseCase << endl;
         cout << endl;
 
         //Finally, check to repeat.
