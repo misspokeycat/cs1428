@@ -18,9 +18,9 @@
 using namespace std;
 
 struct Record {
-    int SalesPerson;
-    double SalesByQuarter[4];
-    double totalSales;
+    int SalesPerson; //The ID of a salesperson.
+    double SalesByQuarter[4]; //The quarterly sales total for the salesperson.
+    double totalSales; //The yearly sales total for the salesperson.
 };
 
 void getData(Record[]); //Populates record array with values fromm file.
@@ -33,10 +33,10 @@ void getSalesPersonName(int id); //Reads salespeople file, and prints the name f
 void maxSaleByPerson(Record[]); //Prints the maximum salesperson name, ID, and the amount sold.
 void maxSaleByQuarter(Record[]); //Prints the highest earning quarter number and its sales.
 
-int len = getLineCount();
-
 int main(){
-    Record salesData[len];
+    Record salesData[getLineCount()]; //Will hold our sales records.
+    
+    //Not much in main, becuase printReport handles most of the printing.
     getData(salesData);
     printReport(salesData);
     return 0;
@@ -45,12 +45,16 @@ int main(){
 void getData(Record recs[]){
     ifstream fin;
     fin.open("sales.txt");
-    if (!fin){
+    
+    //File error handling
+    if (!fin){ 
         fin.close();
         cout << "ERROR: Unable to open sales.txt" << endl;
         exit(1);
     }
-    for (int x = 0; x < len; x++){
+    
+    //Populate the array with data from the file.
+    for (int x = 0; x < getLineCount(); x++){
         fin >> recs[x].SalesPerson >>
             recs[x].SalesByQuarter[0] >>
             recs[x].SalesByQuarter[1] >>
@@ -62,11 +66,12 @@ void getData(Record recs[]){
 
 double totalSalesByQuarter(Record recs[], int quarter){
     double total = 0;
-    for (int x = 0; x < len; x++){
+    for (int x = 0; x < getLineCount(); x++){
         total += recs[x].SalesByQuarter[quarter-1];
     }
     return total;
 }
+
 double salesByPerson(Record rec){
     double totalSales = 0;
     for (int x = 0; x < 4; x++){
@@ -76,14 +81,15 @@ double salesByPerson(Record rec){
 }
 
 void printReport(Record recs[]){
-    //TODO: Print the heading for the report.
+    //Print the heading.
     cout << setw(40) << "Night Ya Night Prime Coffee" << endl;
     cout << setw(46) << "------ Annual Sales Report - 2013 ------" << endl;
     cout << "ID" << setw(9) << "QT1" << setw(9) << "QT2" << setw(9) << "QT3" << setw(9) << "QT4" << setw(9) << "Total" << endl;
     cout << "-----------------------------------------------------" << endl;
+    
     //Print the data.
     cout << setprecision(2) << left << fixed;
-    for (int x = 0; x < len; x++){
+    for (int x = 0; x < getLineCount(); x++){
         cout << recs[x].SalesPerson << "\t" << setw(9) <<
             recs[x].SalesByQuarter[0] << setw(9) <<
             recs[x].SalesByQuarter[1] << setw(9) <<
@@ -99,6 +105,7 @@ void printReport(Record recs[]){
         totalSalesByQuarter(recs, 4) << setw(9) <<
         grandTotal(recs) << endl;
     cout << endl;
+    //Due to design, maxSaleByPerson and maxSaleByQuarter print entirely on their own.
     maxSaleByPerson(recs);
     cout << endl << endl;
     maxSaleByQuarter(recs);
@@ -130,7 +137,7 @@ void getSalesPersonName(int id){
 void maxSaleByPerson(Record recs[]){
     int maxindex = -1;
     double maxnum = -1;
-    for (int x = 0; x < len; x++){
+    for (int x = 0; x < getLineCount(); x++){
         if (recs[x].totalSales > maxnum){
             maxindex = x;
             maxnum = recs[x].totalSales;
@@ -157,7 +164,7 @@ void maxSaleByQuarter(Record recs[]){
 
 double grandTotal(Record recs[]){
     double total = 0;
-    for (int x = 0; x < len; x++){
+    for (int x = 0; x < getLineCount(); x++){
         total += recs[x].totalSales;
     }
     return total;
@@ -166,6 +173,7 @@ double grandTotal(Record recs[]){
 int getLineCount(){
     ifstream fin;
     fin.open("sales.txt");
+    //Handles file errors.
     if (!fin){
         fin.close();
         cout << "ERROR: Unable to open sales.txt" << endl;
