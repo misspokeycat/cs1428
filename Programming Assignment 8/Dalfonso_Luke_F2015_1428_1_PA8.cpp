@@ -18,8 +18,8 @@
 using namespace std;
 
 struct Record {
-    int SalesPerson; //The ID of a salesperson.
-    double SalesByQuarter[4]; //The quarterly sales total for the salesperson.
+    int SalesPersonID; //The ID of a salesperson.
+    double saleByQuarter[4]; //The quarterly sales total for the salesperson.
     double totalSales; //The yearly sales total for the salesperson.
 };
 
@@ -55,11 +55,11 @@ void getData(Record recs[]){
     
     //Populate the array with data from the file.
     for (int x = 0; x < getLineCount(); x++){
-        fin >> recs[x].SalesPerson >>
-            recs[x].SalesByQuarter[0] >>
-            recs[x].SalesByQuarter[1] >>
-            recs[x].SalesByQuarter[2] >>
-            recs[x].SalesByQuarter[3];
+        fin >> recs[x].SalesPersonID >>
+            recs[x].saleByQuarter[0] >>
+            recs[x].saleByQuarter[1] >>
+            recs[x].saleByQuarter[2] >>
+            recs[x].saleByQuarter[3];
         recs[x].totalSales = salesByPerson(recs[x]);
     }
 };
@@ -67,7 +67,7 @@ void getData(Record recs[]){
 double totalSalesByQuarter(Record recs[], int quarter){
     double total = 0;
     for (int x = 0; x < getLineCount(); x++){
-        total += recs[x].SalesByQuarter[quarter-1];
+        total += recs[x].saleByQuarter[quarter-1];
     }
     return total;
 }
@@ -75,7 +75,7 @@ double totalSalesByQuarter(Record recs[], int quarter){
 double salesByPerson(Record rec){
     double totalSales = 0;
     for (int x = 0; x < 4; x++){
-        totalSales += rec.SalesByQuarter[x];
+        totalSales += rec.saleByQuarter[x];
     }
     return totalSales;
 }
@@ -90,11 +90,11 @@ void printReport(Record recs[]){
     //Print the data.
     cout << setprecision(2) << left << fixed;
     for (int x = 0; x < getLineCount(); x++){
-        cout << recs[x].SalesPerson << "\t" << setw(9) <<
-            recs[x].SalesByQuarter[0] << setw(9) <<
-            recs[x].SalesByQuarter[1] << setw(9) <<
-            recs[x].SalesByQuarter[2] << setw(9) <<
-            recs[x].SalesByQuarter[3] << setw(9) <<
+        cout << recs[x].SalesPersonID << "\t" << setw(9) <<
+            recs[x].saleByQuarter[0] << setw(9) <<
+            recs[x].saleByQuarter[1] << setw(9) <<
+            recs[x].saleByQuarter[2] << setw(9) <<
+            recs[x].saleByQuarter[3] << setw(9) <<
             recs[x].totalSales << endl;
     }
     cout << endl << endl;
@@ -145,9 +145,9 @@ void maxSaleByPerson(Record recs[]){
     }
     cout << "Max Sale by Sales Person:" << endl << endl;
     cout << "Sales Person Name: ";
-    getSalesPersonName(recs[maxindex].SalesPerson);
+    getSalesPersonName(recs[maxindex].SalesPersonID);
     cout << endl;
-    cout << "Sales Person ID = " << recs[maxindex].SalesPerson << " , \tAmount = $" << recs[maxindex].totalSales << endl;
+    cout << "Sales Person ID = " << recs[maxindex].SalesPersonID << " , \tAmount = $" << recs[maxindex].totalSales << endl;
 }
 void maxSaleByQuarter(Record recs[]){
     cout << "Max Sale by Quarter:" << endl << endl;
